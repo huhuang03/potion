@@ -10,8 +10,24 @@ syntax keyword potionFunction print join string
 
 syntax match potionComment "\v#.*$"
 
+syntax match potionOperator "\v\+"
+syntax match potionOperator "\v-"
+syntax match potionOperator "\v\*"
+syntax match potionOperator "\v/"
+syntax match potionOperator "\v\="
+syntax match potionOperator "\v\?"
+syntax match potionOperator "\v\+\="
+syntax match potionOperator "\v/\="
+syntax match potionOperator "\v\*\="
+syntax match potionOperator "\v/\="
+
+syntax region potionString start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax region potionString start=/\v'/ skip=/\v\\./ end=/\v'/
+
 highlight link potionKeyWord Keyword
 highlight link potionFunction Function
 highlight link potionComment Comment
+highlight link potionOperator Operator
+highlight link potionString String
 
 let b:current_syntax = "potion"
